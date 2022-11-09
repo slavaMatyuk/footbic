@@ -1,15 +1,16 @@
 import {StyleSheet} from 'react-native';
+import {THEME} from '@styles/theme';
 
 export const styles = StyleSheet.create({
   buttonContainer: {
     marginLeft: 10,
-    backgroundColor: '#003355',
+    backgroundColor: THEME.PRIMARY,
     borderRadius: 5,
   },
   buttonText: {
     textTransform: 'uppercase',
     fontWeight: '700',
-    color: '#11cccc',
+    color: THEME.PRIMARY_ALT,
     padding: 10,
   },
 });

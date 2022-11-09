@@ -1,9 +1,8 @@
 export const THEME = {
-  PRIMARY: '#2f2f2f',
-  PRIMARY_HOVER: '#2f2f2f80',
-  SECONDARY: '#efeeef',
-  SECONDARY_HOVER: '#bdcccd',
-  APP_BG: '#9ce6ff',
+  PRIMARY: '#7c3e66',
+  PRIMARY_ALT: '#f2ebe9',
+  SECONDARY: '#243a73',
+  SECONDARY_ALT: '#a5becc',
 
   DANGER: '#cc3500',
   DANGER_HOVER: '#cc350040',

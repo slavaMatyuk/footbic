@@ -1,9 +1,10 @@
+import {THEME} from '@styles/theme';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#cccccc',
+    backgroundColor: THEME.PRIMARY,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -11,7 +12,7 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    color: '#000000',
+    color: THEME.PRIMARY_ALT,
     paddingHorizontal: 25,
     paddingVertical: 5,
   },
