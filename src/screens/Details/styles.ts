@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: THEME.PRIMARY,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   title: {
     fontSize: 18,
@@ -14,6 +13,11 @@ export const styles = StyleSheet.create({
     textTransform: 'uppercase',
     color: THEME.PRIMARY_ALT,
     paddingHorizontal: 25,
-    paddingVertical: 5,
+    paddingVertical: 15,
+  },
+  logo: {
+    width: 250,
+    height: 250,
+    resizeMode: 'contain',
   },
 });

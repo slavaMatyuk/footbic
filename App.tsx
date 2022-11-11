@@ -1,6 +1,12 @@
 import React from 'react';
-import {AppNavigation} from './src/router';
+import {Provider} from 'react-redux';
+import {AppNavigation} from '@router/index';
+import store from '@store/index';
 
 export const App = () => {
-  return <AppNavigation />;
+  return (
+    <Provider store={store}>
+      <AppNavigation />
+    </Provider>
+  );
 };

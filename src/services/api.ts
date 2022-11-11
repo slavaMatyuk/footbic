@@ -1,10 +1,12 @@
+import {MATCHES_LIMIT, TEAMS_LIMIT} from '@constants/index';
+
 const requestHeaders: HeadersInit_ = new Headers();
 requestHeaders.set('X-Auth-Token', '399bfa568b214d0e92854ec170152895');
 
 export const getTeams = async () => {
   try {
     const response = await fetch(
-      'https://api.football-data.org/v4/teams?limit=100',
+      `https://api.football-data.org/v4/teams?limit=${TEAMS_LIMIT}`,
       {
         headers: requestHeaders,
       },
@@ -34,14 +36,14 @@ export const getCurrentTeamById = async (id: number) => {
 export const getUpcomingMatchesById = async (id: number) => {
   try {
     const response = await fetch(
-      `https://api.football-data.org/v4/teams/${id}/matches?status=SCHEDULED`,
+      `https://api.football-data.org/v4/teams/${id}/matches?status=SCHEDULED&limit=${MATCHES_LIMIT}`,
       {
         headers: requestHeaders,
       },
     );
     const data = await response.json();
-    return data;
+    return data.matches;
   } catch (error) {
-    console.log(`[Fetch team error]: ${error}`);
+    console.log(`[Fetch matches error]: ${error}`);
   }
 };

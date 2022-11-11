@@ -1,5 +1,7 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {
+  ActivityIndicator,
   FlatList,
   Image,
   SafeAreaView,
@@ -8,18 +10,27 @@ import {
 } from 'react-native';
 import {Team} from '@models/Team';
 import {DashboardScreenProps} from '@router/types';
-import {getTeams} from '@services/api';
+import {
+  isLoadingTeamsSelector,
+  teamsSelector,
+} from '@store/selectors/getTeamsSelectors';
+import {getTeamsAction} from '@store/actions/getTeams';
 import {APP_IMAGES} from '@assets/index';
 import {styles} from './styles';
+import {THEME} from '@styles/theme';
 
 export const Dashboard: FC<DashboardScreenProps> = ({navigation}) => {
-  const [teams, setTeams] = useState<Team[]>([]);
+  const isLoading = useSelector(isLoadingTeamsSelector);
+  const teamsFromDb = useSelector(teamsSelector);
 
-  const goToDetails = () => navigation.navigate('Details');
+  const dispatch = useDispatch();
+
+  const goToDetails = (id: number) => () =>
+    navigation.navigate('Details', {teamID: id});
 
   const renderItem = ({item}: {item: Team}) => {
     return (
-      <TouchableOpacity style={styles.row} onPress={goToDetails}>
+      <TouchableOpacity style={styles.row} onPress={goToDetails(item.id)}>
         {item.crest ? (
           <Image style={styles.logo} source={{uri: item.crest}} />
         ) : (
@@ -31,16 +42,20 @@ export const Dashboard: FC<DashboardScreenProps> = ({navigation}) => {
   };
 
   useEffect(() => {
-    getTeams().then(response => setTeams(response));
-  }, []);
+    dispatch(getTeamsAction.request());
+  }, [dispatch]);
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={teams}
-        renderItem={renderItem}
-        keyExtractor={item => item.name}
-      />
+      {isLoading ? (
+        <ActivityIndicator size='large' color={THEME.SECONDARY} />
+      ) : (
+        <FlatList
+          data={teamsFromDb}
+          renderItem={renderItem}
+          keyExtractor={item => item.name}
+        />
+      )}
     </SafeAreaView>
   );
 };
