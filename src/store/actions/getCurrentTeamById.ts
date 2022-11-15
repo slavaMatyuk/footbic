@@ -1,5 +1,5 @@
 import {ActionType, createAsyncAction} from 'typesafe-actions';
-import {CurrentTeam} from '@models/GetCurrentTeamResponse';
+import {CurrentTeamResponse} from '@models/GetCurrentTeamResponse';
 import {ErrorResponse} from '@models/ErrorResponse';
 
 export enum GetCurrentTeamByIdTypes {
@@ -12,7 +12,7 @@ export const getCurrentTeamByIdAction = createAsyncAction(
   GetCurrentTeamByIdTypes.GetCurrentTeamById,
   GetCurrentTeamByIdTypes.GetCurrentTeamByIdSuccess,
   GetCurrentTeamByIdTypes.GetCurrentTeamByIdFailed,
-)<number, CurrentTeam, ErrorResponse>();
+)<number, CurrentTeamResponse, ErrorResponse>();
 
 export type GetCurrentTeamByIdUnion = ActionType<
   typeof getCurrentTeamByIdAction

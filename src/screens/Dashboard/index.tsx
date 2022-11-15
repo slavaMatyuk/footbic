@@ -8,13 +8,13 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {Team} from '@models/Team';
 import {DashboardScreenProps} from '@router/types';
 import {
   isLoadingTeamsSelector,
   teamsSelector,
 } from '@store/selectors/getTeamsSelectors';
 import {getTeamsAction} from '@store/actions/getTeams';
+import {Team} from '@models/common/Team';
 import {APP_IMAGES} from '@assets/index';
 import {styles} from './styles';
 import {THEME} from '@styles/theme';

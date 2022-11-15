@@ -1,6 +1,6 @@
 import {ActionType, createAsyncAction} from 'typesafe-actions';
-import {Team} from '@models/Team';
 import {ErrorResponse} from '@models/ErrorResponse';
+import {Team} from '@models/common/Team';
 
 export enum GetTeamsTypes {
   GetTeams = '[GetTeams] GetTeams',

@@ -1,5 +1,5 @@
 import {createReducer} from 'typesafe-actions';
-import {Team} from '@models/Team';
+import {Team} from '@models/common/Team';
 import {getTeamsAction, GetTeamsUnion} from '@store/actions/getTeams';
 
 export interface State {
@@ -27,5 +27,5 @@ export const reducer = createReducer<State, GetTeamsUnion>(initialState)
   .handleAction(getTeamsAction.failure, (state, action) => ({
     ...state,
     isLoading: false,
-    error: action.payload.error,
+    error: action.payload.message,
   }));

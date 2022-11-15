@@ -9,5 +9,10 @@ export interface Team {
   founded: number;
   clubColors: string;
   venue: string;
-  lastUpdated: Date;
+  lastUpdated: string;
 }
+
+export type ShortTeam = Pick<
+  Team,
+  'id' | 'name' | 'shortName' | 'tla' | 'crest'
+>;

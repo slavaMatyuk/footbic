@@ -1,6 +1,6 @@
 import {getTeams} from '@services/api';
 import {takeLatest, call, put} from '@redux-saga/core/effects';
-import {Team} from '@models/Team';
+import {Team} from '@models/common/Team';
 import {ErrorResponse} from '@models/ErrorResponse';
 import {getTeamsAction} from '@store/actions/getTeams';
 

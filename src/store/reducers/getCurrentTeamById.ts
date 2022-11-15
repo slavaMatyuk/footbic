@@ -1,5 +1,5 @@
 import {createReducer} from 'typesafe-actions';
-import {CurrentTeam} from '@models/GetCurrentTeamResponse';
+import {CurrentTeamResponse} from '@models/GetCurrentTeamResponse';
 import {
   getCurrentTeamByIdAction,
   GetCurrentTeamByIdUnion,
@@ -7,7 +7,7 @@ import {
 
 export interface State {
   isLoadingTeam: boolean;
-  currentTeam: CurrentTeam | null;
+  currentTeam: CurrentTeamResponse | null;
   error: string;
 }
 
@@ -32,5 +32,5 @@ export const reducer = createReducer<State, GetCurrentTeamByIdUnion>(
   .handleAction(getCurrentTeamByIdAction.failure, (state, action) => ({
     ...state,
     isLoadingTeam: false,
-    error: action.payload.error,
+    error: action.payload.message,
   }));

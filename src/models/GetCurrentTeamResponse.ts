@@ -1,38 +1,14 @@
-interface Area {
-  id: number;
-  name: string;
-  code: string;
-  flag: string;
-}
+import {Area} from './common/Area';
+import {Competition} from './common/Competition';
+import {Person} from './common/Person';
 
-interface Person {
-  id: number;
-  firstName: string;
-  lastName: string;
-  name: string;
-  dateOfBirth: string;
-  nationality: string;
-  contract: {
-    start: string;
-    until: string;
-  };
-}
-
-interface Player extends Person {
-  position: 'Goalkeeper';
+export interface Player extends Person {
+  position: string;
   shirtNumber: number | null;
   marketValue: number;
 }
 
-interface RunningCompetition {
-  id: number;
-  name: string;
-  code: string;
-  type: string;
-  emblem: string;
-}
-
-export interface CurrentTeam {
+export interface CurrentTeamResponse {
   area: Area;
   id: number;
   name: string;
@@ -44,10 +20,10 @@ export interface CurrentTeam {
   founded: number;
   clubColors: string;
   venue: string;
-  runningCompetitions: RunningCompetition[];
+  runningCompetitions: Competition[];
   coach: Person;
   marketValue: number;
   squad: Player[];
   staff: Person[];
-  lastUpdated: Date;
+  lastUpdated: string;
 }
