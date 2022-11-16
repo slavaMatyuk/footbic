@@ -2,7 +2,7 @@ export const formatDate = (date: string) => {
   const newDate = new Date(date);
   let day = newDate.getDate().toString();
   let month = (newDate.getMonth() + 1).toString();
-  const year = newDate.getFullYear().toString().slice(-2);
+  const year = newDate.getFullYear().toString();
 
   if (+day < 10) {
     day = `0${day}`;

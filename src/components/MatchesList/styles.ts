@@ -8,21 +8,17 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 25,
     width: '100%',
   },
-  row: {
-    flexDirection: 'row',
-    marginVertical: 3,
-    justifyContent: 'space-between',
+  card: {
+    marginVertical: 5,
+    height: 100,
+    backgroundColor: THEME.PRIMARY_ALT,
+    padding: 15,
+    borderRadius: 5,
   },
-  title: {
+  rowTitle: {
     textTransform: 'uppercase',
-    color: THEME.SECONDARY_ALT,
+    color: THEME.SECONDARY,
     fontSize: 16,
     fontWeight: '700',
-  },
-  cell: {
-    color: THEME.PRIMARY_ALT,
-  },
-  lastCell: {
-    color: THEME.SUCCESS,
   },
 });

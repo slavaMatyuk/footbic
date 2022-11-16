@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     marginVertical: 3,
   },
   text: {
-    fontSize: 16,
+    fontSize: 18,
     color: THEME.PRIMARY_ALT,
   },
 });

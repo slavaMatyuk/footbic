@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
     textTransform: 'uppercase',
@@ -17,18 +17,13 @@ export const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     textTransform: 'uppercase',
     color: THEME.SECONDARY_ALT,
     paddingHorizontal: 10,
     paddingVertical: 10,
-  },
-  text: {
-    fontSize: 16,
-    color: THEME.PRIMARY_ALT,
-    paddingHorizontal: 25,
   },
   logo: {
     width: 250,

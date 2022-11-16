@@ -18,7 +18,7 @@ import {
   isLoadingMatchesSelector,
   matchesSelector,
 } from '@store/selectors/getUpcomingMatchesSelector';
-import {MatchesTable} from '@components/MatchesTable';
+import {MatchesList} from '@components/MatchesList';
 import {PlayersList} from '@components/PlayersList';
 import {THEME} from '@styles/theme';
 import {styles} from './styles';
@@ -55,12 +55,12 @@ export const Details: FC<DetailsScreenProps> = ({route}) => {
               <Text style={styles.subtitle}>Upcoming matches</Text>
             )}
             {downloadedMatches ? (
-              <MatchesTable
+              <MatchesList
                 matches={downloadedMatches}
                 teamShortName={currentTeam.shortName}
               />
             ) : (
-              <Text style={styles.text}>No data</Text>
+              <Text style={styles.subtitle}>No data</Text>
             )}
           </>
         ) : (
