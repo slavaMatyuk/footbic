@@ -1,4 +1,4 @@
-import {Match} from './common/Match';
+import {Match} from './common/match.interface';
 
 export interface GetUpcomingMatchesResponse {
   matches: Match[];

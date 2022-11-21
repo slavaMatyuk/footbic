@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
 import {Text, View} from 'react-native';
-import {Player} from '@models/GetCurrentTeamResponse';
+import {Player} from '@models/getCurrentTeamResponse';
 import {styles} from './styles';
 
-type Prop = {
+interface PlayersListProp {
   players: Player[];
-};
+}
 
-export const PlayersList: FC<Prop> = ({players}) => {
+export const PlayersList: FC<PlayersListProp> = ({players}) => {
   return (
     <View style={styles.container}>
       {players.map(({name, id}) => (

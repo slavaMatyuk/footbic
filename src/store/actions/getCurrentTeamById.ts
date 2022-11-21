@@ -1,6 +1,6 @@
 import {ActionType, createAsyncAction} from 'typesafe-actions';
-import {CurrentTeamResponse} from '@models/GetCurrentTeamResponse';
-import {ErrorResponse} from '@models/ErrorResponse';
+import {CurrentTeamResponse} from '@models/getCurrentTeamResponse';
+import {ErrorResponse} from '@models/errorResponse';
 
 export enum GetCurrentTeamByIdTypes {
   GetCurrentTeamById = '[GetCurrentTeamById] GetCurrentTeamById',

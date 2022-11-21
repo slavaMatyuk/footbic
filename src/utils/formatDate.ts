@@ -4,13 +4,5 @@ export const formatDate = (date: string) => {
   let month = (newDate.getMonth() + 1).toString();
   const year = newDate.getFullYear().toString();
 
-  if (+day < 10) {
-    day = `0${day}`;
-  }
-
-  if (+month < 10) {
-    month = `0${month}`;
-  }
-
-  return `${day}.${month}.${year}`;
+  return `${day.padStart(2, '0')}.${month.padStart(2, '0')}.${year}`;
 };

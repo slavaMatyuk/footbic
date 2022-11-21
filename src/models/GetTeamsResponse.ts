@@ -1,4 +1,4 @@
-import {Team} from './common/Team';
+import {Team} from './common/team.interface';
 
 export interface GetTeamsResponse {
   teams: Team[];

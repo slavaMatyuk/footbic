@@ -1,7 +1,7 @@
 import {getTeams} from '@services/api';
 import {takeLatest, call, put} from '@redux-saga/core/effects';
-import {Team} from '@models/common/Team';
-import {ErrorResponse} from '@models/ErrorResponse';
+import {Team} from '@models/common/team.interface';
+import {ErrorResponse} from '@models/errorResponse';
 import {getTeamsAction} from '@store/actions/getTeams';
 
 export function* getTeamsSagaWorker() {

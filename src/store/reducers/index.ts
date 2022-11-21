@@ -5,13 +5,13 @@ import * as fromGetCurrentTeamById from './getCurrentTeamById';
 import * as fromGetUpcomingMatches from './getUpcomingMatches';
 
 export interface AppState {
-  getTeams: fromGetTeams.State;
-  getCurrentTeamById: fromGetCurrentTeamById.State;
-  getUpcomingMatches: fromGetUpcomingMatches.State;
+  teams: fromGetTeams.State;
+  currentTeamById: fromGetCurrentTeamById.State;
+  upcomingMatches: fromGetUpcomingMatches.State;
 }
 
 export const rootReducer = combineReducers<AppState>({
-  getTeams: fromGetTeams.reducer,
-  getCurrentTeamById: fromGetCurrentTeamById.reducer,
-  getUpcomingMatches: fromGetUpcomingMatches.reducer,
+  teams: fromGetTeams.reducer,
+  currentTeamById: fromGetCurrentTeamById.reducer,
+  upcomingMatches: fromGetUpcomingMatches.reducer,
 });

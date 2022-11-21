@@ -1,6 +1,6 @@
-import {Area} from './common/Area';
-import {Competition} from './common/Competition';
-import {Person} from './common/Person';
+import {Area} from './common/area.interface';
+import {Competition} from './common/competition.interface';
+import {Person} from './common/person.interface';
 
 export interface Player extends Person {
   position: string;

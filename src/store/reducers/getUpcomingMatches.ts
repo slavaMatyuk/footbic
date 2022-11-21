@@ -1,5 +1,5 @@
 import {createReducer} from 'typesafe-actions';
-import {Match} from '@models/common/Match';
+import {Match} from '@models/common/match.interface';
 import {
   getUpcomingMatchesAction,
   GetUpcomingMatchesUnion,
@@ -7,7 +7,7 @@ import {
 
 export interface State {
   isLoadingMatches: boolean;
-  matches: Match[] | [];
+  matches: Match[];
   error: string;
 }
 

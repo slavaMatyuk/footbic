@@ -1,9 +1,9 @@
 import {createReducer} from 'typesafe-actions';
-import {CurrentTeamResponse} from '@models/GetCurrentTeamResponse';
 import {
   getCurrentTeamByIdAction,
   GetCurrentTeamByIdUnion,
 } from '@store/actions/getCurrentTeamById';
+import {CurrentTeamResponse} from '@models/getCurrentTeamResponse';
 
 export interface State {
   isLoadingTeam: boolean;

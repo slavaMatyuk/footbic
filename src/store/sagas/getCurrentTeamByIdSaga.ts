@@ -1,8 +1,8 @@
 import {ActionType} from 'typesafe-actions';
 import {takeLatest, call, put} from '@redux-saga/core/effects';
 import {getCurrentTeamById} from '@services/api';
-import {CurrentTeamResponse} from '@models/GetCurrentTeamResponse';
-import {ErrorResponse} from '@models/ErrorResponse';
+import {CurrentTeamResponse} from '@models/getCurrentTeamResponse';
+import {ErrorResponse} from '@models/errorResponse';
 import {getCurrentTeamByIdAction} from '@store/actions/getCurrentTeamById';
 
 export function* getCurrentTeamByIdSagaWorker({

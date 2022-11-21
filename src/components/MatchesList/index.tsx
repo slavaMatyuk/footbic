@@ -1,15 +1,15 @@
 import React, {FC} from 'react';
 import {Text, View} from 'react-native';
-import {Match} from '@models/common/Match';
+import {Match} from '@models/common/match.interface';
 import {formatDate} from '@utils/formatDate';
 import {styles} from './styles';
 
-type Prop = {
+interface MatchesListProp {
   matches: Match[];
   teamShortName: string;
-};
+}
 
-export const MatchesList: FC<Prop> = ({matches, teamShortName}) => {
+export const MatchesList: FC<MatchesListProp> = ({matches, teamShortName}) => {
   const renderRow = ({id, utcDate, competition, awayTeam, homeTeam}: Match) => (
     <View style={styles.card} key={id}>
       <Text style={styles.rowTitle}>{`Date: ${formatDate(utcDate)}`}</Text>

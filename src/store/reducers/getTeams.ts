@@ -1,5 +1,5 @@
 import {createReducer} from 'typesafe-actions';
-import {Team} from '@models/common/Team';
+import {Team} from '@models/common/team.interface';
 import {getTeamsAction, GetTeamsUnion} from '@store/actions/getTeams';
 
 export interface State {

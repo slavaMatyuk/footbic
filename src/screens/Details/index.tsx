@@ -7,7 +7,10 @@ import {
   Text,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {DetailsScreenProps} from '@router/types';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RouteProp, useRoute} from '@react-navigation/native';
+import {AppRoutes} from '@router/index';
+import {RootStackParamList} from '@router/types';
 import {getCurrentTeamByIdAction} from '@store/actions/getCurrentTeamById';
 import {getUpcomingMatchesAction} from '@store/actions/getUpcomingMatches';
 import {
@@ -23,8 +26,15 @@ import {PlayersList} from '@components/PlayersList';
 import {THEME} from '@styles/theme';
 import {styles} from './styles';
 
-export const Details: FC<DetailsScreenProps> = ({route}) => {
-  const {teamID} = route.params;
+type DetailsScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  AppRoutes.DETAILS
+>;
+type DetailsNavigationProp = RouteProp<RootStackParamList, AppRoutes.DETAILS>;
+
+export const Details: FC<DetailsScreenProps> = () => {
+  const {params} = useRoute<DetailsNavigationProp>();
+  const teamID = params.teamID;
 
   const isLoadingTeam = useSelector(isLoadingCurrentTeamSelector);
   const isLoadingMatches = useSelector(isLoadingMatchesSelector);

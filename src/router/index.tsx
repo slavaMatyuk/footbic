@@ -7,28 +7,31 @@ import {BackButton} from '@components/BackButton';
 import {RootStackParamList} from './types';
 import {THEME} from '@styles/theme';
 
+export enum AppRoutes {
+  DASHBOARD = 'Dashboard',
+  DETAILS = 'Details',
+}
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const AppNavigation: FC = () => {
-  const {Navigator, Screen} = Stack;
-
   return (
     <NavigationContainer>
-      <Navigator
-        initialRouteName='Dashboard'
+      <Stack.Navigator
+        initialRouteName={AppRoutes.DASHBOARD}
         screenOptions={() => ({
           headerTitleAlign: 'center',
         })}>
-        <Screen
-          name='Dashboard'
+        <Stack.Screen
+          name={AppRoutes.DASHBOARD}
           component={Dashboard}
           options={{
             headerStyle: {backgroundColor: THEME.SECONDARY},
             headerTintColor: THEME.PRIMARY_ALT,
           }}
         />
-        <Screen
-          name='Details'
+        <Stack.Screen
+          name={AppRoutes.DETAILS}
           component={Details}
           options={{
             headerLeft: BackButton,
@@ -36,7 +39,7 @@ export const AppNavigation: FC = () => {
             headerTintColor: THEME.PRIMARY_ALT,
           }}
         />
-      </Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

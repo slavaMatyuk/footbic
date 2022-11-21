@@ -20,6 +20,7 @@ module.exports = function (api) {
             '@assets': './src/assets',
             '@components': './src/components',
             '@constants': './src/constants',
+            '@config': './src/config',
             '@router': './src/router',
             '@screens': './src/screens',
             '@services': './src/services',

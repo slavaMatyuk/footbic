@@ -1,8 +1,8 @@
 import {ActionType} from 'typesafe-actions';
 import {takeLatest, call, put} from '@redux-saga/core/effects';
 import {getUpcomingMatchesById} from '@services/api';
-import {Match} from '@models/common/Match';
-import {ErrorResponse} from '@models/ErrorResponse';
+import {Match} from '@models/common/match.interface';
+import {ErrorResponse} from '@models/errorResponse';
 import {getUpcomingMatchesAction} from '@store/actions/getUpcomingMatches';
 
 export function* getUpcomingMatchesSagaWorker({

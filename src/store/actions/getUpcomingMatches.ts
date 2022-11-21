@@ -1,6 +1,6 @@
 import {ActionType, createAsyncAction} from 'typesafe-actions';
-import {Match} from '@models/common/Match';
-import {ErrorResponse} from '@models/ErrorResponse';
+import {Match} from '@models/common/match.interface';
+import {ErrorResponse} from '@models/errorResponse';
 
 export enum GetUpcomingMatchesTypes {
   GetUpcomingMatches = '[GetUpcomingMatches] GetUpcomingMatches',

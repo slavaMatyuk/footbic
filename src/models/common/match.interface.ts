@@ -1,7 +1,7 @@
-import {Area} from './Area';
-import {Competition} from './Competition';
-import {Season} from './Season';
-import {ShortTeam} from './Team';
+import {Area} from './area.interface';
+import {Competition} from './competition.interface';
+import {Season} from './season.interface';
+import {ShortTeam} from './team.interface';
 
 export interface Match {
   area: Area;

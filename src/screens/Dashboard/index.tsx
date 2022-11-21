@@ -1,5 +1,6 @@
 import React, {FC, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {
   ActivityIndicator,
   FlatList,
@@ -8,16 +9,22 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {DashboardScreenProps} from '@router/types';
+import {AppRoutes} from '@router/index';
+import {RootStackParamList} from '@router/types';
 import {
   isLoadingTeamsSelector,
   teamsSelector,
 } from '@store/selectors/getTeamsSelectors';
 import {getTeamsAction} from '@store/actions/getTeams';
-import {Team} from '@models/common/Team';
+import {Team} from '@models/common/team.interface';
 import {APP_IMAGES} from '@assets/index';
 import {styles} from './styles';
 import {THEME} from '@styles/theme';
+
+type DashboardScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  AppRoutes.DASHBOARD
+>;
 
 export const Dashboard: FC<DashboardScreenProps> = ({navigation}) => {
   const isLoading = useSelector(isLoadingTeamsSelector);
@@ -26,7 +33,7 @@ export const Dashboard: FC<DashboardScreenProps> = ({navigation}) => {
   const dispatch = useDispatch();
 
   const goToDetails = (id: number) => () =>
-    navigation.navigate('Details', {teamID: id});
+    navigation.navigate(AppRoutes.DETAILS, {teamID: id});
 
   const renderItem = ({item}: {item: Team}) => {
     return (
